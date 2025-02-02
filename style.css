@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Poetsen+One&family=Poppins:wght@300;500;600&display=swap');
+
+:root {
+    --main-bg: #2A0944;
+    --accent: #3B185F;
+    --pink: #FEC7D7;
+    --lavender: #D4ADFC;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(45deg, var(--main-bg), var(--accent));
+    min-height: 100vh;
+    color: white;
+}
+
+.schedule-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    border: 1px solid var(--pink);
+    transform: translateY(0);
+}
+
+.schedule-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(254, 199, 215, 0.2);
+}
+
+.day-title {
+    font-family: 'Poetsen One', cursive;
+    color: var(--pink);
+    text-shadow: 0 0 10px rgba(254, 199, 215, 0.5);
+}
+
+.tech-bg {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    opacity: 0.1;
+    z-index: -1;
+    background-image: url('data:image/svg+xml,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="0" width="100" height="100" fill="none"/><path d="M20,50 Q40,25 60,50 T100,50" stroke="%23FEC7D7" stroke-width="1" fill="none"/><circle cx="30" cy="70" r="2" fill="%23D4ADFC"/><circle cx="70" cy="30" r="2" fill="%23D4ADFC"/></svg>');
+}
+
+.time-badge {
+    background: linear-gradient(45deg, var(--pink), var(--lavender));
+    color: var(--main-bg);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+}
